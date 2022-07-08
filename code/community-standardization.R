@@ -7,6 +7,7 @@
 #### 5. Finally, if any rows were removed in the filtering step (Step 2), it pulls in the site-level age uncertainty draws from the Bacon models run by Shelley Crausbay from their directory and filters them to remove those rows from the sampling dataframe and writes out a new file for use in R-Ratepol. To accomplish this, Patrick Freeman downloaded this directory of Bacon age-depth model outputs from the Google Drive folder provided by Shelley Crausbay to his local machine and this directory path should be updated if any updates to those models are completed. 
 ########## Script written by Patrick Freeman (patrick[at]csp-inc.org) ##########
 
+### Load libraries
 library(tidyverse)
 library(vegan)
 
