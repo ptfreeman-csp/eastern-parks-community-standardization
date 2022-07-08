@@ -1,4 +1,5 @@
-#### This script is designed to prepare inputs for site-level rate-of-change analyses with the R-Ratepol package. It does the following things: 
+#### This script is designed to prepare inputs for site-level rate-of-change analyses with the R-Ratepol package. It was originally performed by Patrick Freeman on a local machine within its own R project linked to a personal GitHub repo for easier file management and version control. 
+#### It does the following things: 
 #### 1. It ingests the harmonized pollen data tables prepared by Amanda Kissel that include information on the pollen samples at each depth in the soil core.
 #### 2. It does an assessment of whether any rows have fewer than 100 total pollen grains, flags those rows and removes them. 
 #### 3. It then performs a rarefaction procedure to resample all rows to equal depth with replacement. 
