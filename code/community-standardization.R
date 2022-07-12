@@ -12,7 +12,7 @@ library(tidyverse)
 library(vegan)
 
 ### Load harmonized pollen dataset
-pollen <- read_rds("data/inputs/easternNPS_30_neotoma_sites_pollen_data_updated_ages.RDS")
+pollen <- read_rds("data/inputs/easternNPS_30_neotoma_sites_pollen_data_updated_ages_v2.RDS")
 
 ## Remove Mud Creek 
 pollen <- pollen %>%
@@ -90,6 +90,8 @@ for(i in 1:length(pollen_split)){
     dplyr::select(-c(1:9)) %>% 
     dplyr::mutate_if(is.numeric, round) ## Round fractional individuals up to make integer counts
   
+  ### Set seed to make sure sampling is the same
+  set.seed(1234)
   ## Perform rarefaction
   community.rarefied <-
     (as.data.frame(rrarefy(community.prep, sample = 100))) %>%
