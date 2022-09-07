@@ -46,7 +46,7 @@ for(i in 1:length(pollen_split)){
   community.long <- site.df %>% 
     group_by(site.name, dataset.id, depth) %>%
     pivot_longer(., 
-                 cols=7:tail(names(.), 1), 
+                 cols=10:tail(names(.), 1), 
                  names_to="harmon_taxa",
                  values_to="count")
   
@@ -93,7 +93,7 @@ for(i in 1:length(pollen_split)){
     
   ## Set up for rarefaction
   community.prep <- community.df.prep %>% 
-    dplyr::select(-c(1:7)) %>% 
+    dplyr::select(-c(1:10)) %>% 
     dplyr::mutate_if(is.numeric, round) ## Round fractional individuals up to make integer counts
   
   ### Set seed to make sure sampling is the same
